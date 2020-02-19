@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7153f5dd-ca47-4524-931b-bf45be9102b4" name="Default" comment="WIP: Integracion de test">
+      <change afterPath="$PROJECT_DIR$/apps/mb/backend/src/Controller/Bonsais/BonsaisGetAbonoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mb/backend/src/Controller/Bonsais/BonsaisGetPulverizarController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mb/backend/src/Controller/Bonsais/BonsaisGetRiegoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mb/backend/src/Controller/Bonsais/BonsaisGetTransplanteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Application/GetAbono/BonsaiAbonoCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Application/GetPulverizar/BonsaiPulverizarCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Application/GetRiego/BonsaiRiego.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Application/GetRiego/BonsaiRiegoCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Application/GetTransplante/BonsaiTransplanteCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mb/Shared/Application/Bonsai/BonsaiCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/FUNDING.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/bin/console" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/config/routes/health-check.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/MySql/ConsumeMySqlDomainEventsCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/MySql/ConsumeMySqlDomainEventsCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/RabbitMq/ConfigureRabbitMqCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/RabbitMq/ConfigureRabbitMqCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/RabbitMq/ConsumeRabbitMqDomainEventsCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/RabbitMq/ConsumeRabbitMqDomainEventsCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/RabbitMq/GenerateSupervisorRabbitMqConsumerFilesCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/src/Command/DomainEvents/RabbitMq/GenerateSupervisorRabbitMqConsumerFilesCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/src/Controller/Bonsais/BonsaisDeleteController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/src/Controller/HealthCheck/HealthCheckGetController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mb/backend/src/MbBackendKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mb/backend/src/MbBackendKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/behat.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/mb.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/infrastructure/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/etc/infrastructure/nginx/default.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Application/Delete/BonsaiDelete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Application/Delete/DeleteBonsaiCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Application/Delete/DeleteBonsaiCommandHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Application/Update/BonsaiRenamer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/Bonsai.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/Bonsai.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiCreatedDomainEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiName.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiNotExist.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiNotExist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiRemovedDomainEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Domain/BonsaiYears.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/Bonsai.orm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/Bonsai.orm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/BonsaiIdType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/BonsaiIdType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/BonsaiName.orm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/BonsaiType.orm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/BonsaiType.orm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/BonsaiYears.orm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/DoctrineBonsaiRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence/DoctrineBonsaiRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Shared/Domain/Bonsai/BonsaiId.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Shared/Domain/Bonsai/BonsaiId.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Doctrine/DbalTypesSearcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Doctrine/DbalTypesSearcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Doctrine/DoctrinePrefixesSearcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Doctrine/DoctrinePrefixesSearcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Doctrine/MbEntityManagerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Doctrine/MbEntityManagerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Symfony/DependencyInjection/mb_services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mb/Shared/Infrastructure/Symfony/DependencyInjection/mb_services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Aggregate/AggregateRoot.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Aggregate/AggregateRoot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Assert.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Assert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Command/Command.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Command/Command.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Command/CommandBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Command/CommandBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Command/CommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Command/CommandHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Event/DomainEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Event/DomainEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Event/DomainEventSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Event/DomainEventSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Event/EventBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Event/EventBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/Query.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/Query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/QueryBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/QueryBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/QueryHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/QueryHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Bus/Query/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Criteria.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Criteria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/FilterField.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/FilterField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/FilterOperator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/FilterOperator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/FilterValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/FilterValue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Filters.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Filters.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/OrderBy.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/OrderBy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Criteria/OrderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Criteria/OrderType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/DomainError.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/DomainError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Logger.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Logger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Monitoring.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Monitoring.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/RandomNumberGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/RandomNumberGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/Utils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/UuidGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/UuidGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/Enum.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/Enum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/IntValueObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/IntValueObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/StringValueObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/StringValueObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/Uuid.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Domain/ValueObject/Uuid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/CallableFirstParameterExtractor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/CallableFirstParameterExtractor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Command/CommandNotRegisteredError.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Command/CommandNotRegisteredError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Command/InMemorySymfonyCommandBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Command/InMemorySymfonyCommandBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventJsonDeserializer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventJsonDeserializer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventJsonSerializer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventJsonSerializer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventMapping.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventMapping.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventSubscriberLocator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/DomainEventSubscriberLocator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/InMemory/InMemorySymfonyEventBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/InMemory/InMemorySymfonyEventBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/MySql/MySqlDoctrineDomainEventsConsumer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/MySql/MySqlDoctrineDomainEventsConsumer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/MySql/MySqlDoctrineEventBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/MySql/MySqlDoctrineEventBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqConfigurer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqConfigurer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqDomainEventsConsumer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqDomainEventsConsumer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqEventBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqEventBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqExchangeNameFormatter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqExchangeNameFormatter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqQueueNameFormatter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Event/RabbitMq/RabbitMqQueueNameFormatter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Query/InMemorySymfonyQueryBus.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Query/InMemorySymfonyQueryBus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Query/QueryNotRegisteredError.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Bus/Query/QueryNotRegisteredError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/DatabaseConnections.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/DatabaseConnections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/Dbal/DbalCustomTypesRegistrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/Dbal/DbalCustomTypesRegistrar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/Dbal/DoctrineCustomType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/Dbal/DoctrineCustomType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/DoctrineEntityManagerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Doctrine/DoctrineEntityManagerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Logger/MonologLogger.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Logger/MonologLogger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Persistence/Doctrine/DoctrineCriteriaConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Persistence/Doctrine/DoctrineCriteriaConverter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Persistence/Doctrine/DoctrineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Persistence/Doctrine/DoctrineRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Persistence/Doctrine/UuidType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Persistence/Doctrine/UuidType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/PhpRandomNumberGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/PhpRandomNumberGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/RamseyUuidGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/RamseyUuidGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/AddJsonBodyToRequestListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/AddJsonBodyToRequestListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/ApiExceptionListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/ApiExceptionListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/ApiExceptionsHttpStatusCodeMapping.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/ApiExceptionsHttpStatusCodeMapping.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/BasicHttpAuthMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/BasicHttpAuthMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/FlashSession.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/FlashSession.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/Infrastructure/Symfony/WebController.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="my_bonsai: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="my_bonsai: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="bonsais: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/friends-of-behat/symfony-extension" />
+      <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/streams" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/ringphp" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/lambdish/phunctional" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/wouterj/eloquent-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/class-loader" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/proxy-manager-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink-browserkit-driver" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/behat/behat" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink-extension" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1XixqQlsCwCVa2FZITTrBTfI8IH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;MariaDB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Mb/Bonsais/Application" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Mb/Bonsais/Application/Create" />
+      <recent name="$PROJECT_DIR$/src/Mb/Bonsais/Application" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Mb/Bonsais/Application" />
+      <recent name="$PROJECT_DIR$/src/Mb/Shared/Application/Bonsai" />
+      <recent name="$PROJECT_DIR$/apps/mb/backend/src/Controller/Bonsais" />
+      <recent name="$PROJECT_DIR$/src/Mb/Bonsais/Domain" />
+      <recent name="$PROJECT_DIR$/src/Mb/Bonsais/Infrastructure/Persistence" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Makefile.rebuild">
+    <configuration name="build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="build" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="rebuild" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="rebuild" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysql" />
+              <option value="nginx" />
+              <option value="php" />
+              <option value="rabbitmq" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile.rebuild" />
+        <item itemvalue="Makefile.build" />
+        <item itemvalue="Makefile.build" />
+        <item itemvalue="Makefile.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SQLScriptSettings">
+    <option name="matrix">
+      <map>
+        <entry key="MYSQL.CreateComplete" value="Reformat=0" />
+      </map>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="mybonsaiapi_ddd" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="mybonsaiapi_ddd" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="nginx" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="mybonsaiapi_ddd" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="rabbitmq" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7153f5dd-ca47-4524-931b-bf45be9102b4" name="Default" comment="" />
+      <created>1579595657494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579595657494</updated>
+      <workItem from="1579595658928" duration="50000" />
+      <workItem from="1579596415174" duration="2740000" />
+      <workItem from="1579605185673" duration="5496000" />
+      <workItem from="1581542933845" duration="94000" />
+      <workItem from="1581543182956" duration="121000" />
+      <workItem from="1581543363206" duration="2715000" />
+      <workItem from="1581576245156" duration="1882000" />
+      <workItem from="1582105980392" duration="809000" />
+      <workItem from="1582106804252" duration="206000" />
+      <workItem from="1582107024827" duration="4587000" />
+      <workItem from="1582120058962" duration="10240000" />
+    </task>
+    <task id="LOCAL-00001" summary="WIP: Eliminar un bonsai">
+      <created>1581546521111</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581546521111</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/master' into refactor_to_bonsai_and_delete_domain_events_insertion&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/2039acbe-6a83-4e8d-a7d2-f2841fb684b0.xml&#10;#&#9;.idea/php-ddd-example.iml&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md&#10;#&#9;apps/mb/backend/config/routes/bonsais.yaml&#10;#&#9;apps/mb/backend/src/Controller/Bonsais/BonsaisPutController.php&#10;#&#9;databases/mb.sql&#10;#&#9;src/Mb/Bonsais/Application/Create/BonsaiCommand.php&#10;#&#9;src/Mb/Bonsais/Application/Create/BonsaiCreator.php&#10;#&#9;src/Mb/Bonsais/Application/Create/CreateBonsaiCommand.php&#10;#&#9;src/Mb/Bonsais/Domain/Bonsai.php&#10;#&#9;src/Mb/Bonsais/Domain/BonsaiRepository.php&#10;#&#9;src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/Bonsai.orm.xml&#10;#&#9;src/Mb/Bonsais/Infrastructure/Persistence/Doctrine/BonsaiIdType.php&#10;#&#9;src/Mb/Bonsais/Infrastructure/Persistence/DoctrineBonsaiRepository.php&#10;#&#9;src/Mb/Courses/Application/Create/CreateCourseCommand.php&#10;#&#9;src/Mb/Shared/Domain/Bonsai/BonsaiId.php" />
+    <MESSAGE value="WIP: Eliminar un bonsai" />
+    <MESSAGE value="WIP: Integracion de test" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP: Integracion de test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="212" y="218" width="800" height="684" key="#Docker" timestamp="1582108652711">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="212" y="218" width="800" height="684" key="#Docker/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582108652711" />
+    <state x="75" y="215" width="802" height="679" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582108682896">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="75" y="189" width="802" height="679" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581490838399" />
+    <state x="75" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582108682896" />
+    <state x="701" y="401" width="510" height="259" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1581543308511">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="701" y="401" width="510" height="259" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581543308511" />
+    <state x="478" y="27" width="640" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582128250510">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="478" y="0" width="948" height="1056" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581578327325" />
+    <state x="478" y="27" width="640" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582128250510" />
+    <state x="693" y="313" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582130979008">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="693" y="287" width="526" height="486" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581576320096" />
+    <state x="693" y="313" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582130979008" />
+    <state x="272" y="0" width="1368" height="1056" key="CommitChangelistDialog2" timestamp="1581546520522">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="272" y="0" width="1368" height="1056" key="CommitChangelistDialog2/0.0.1920.1056@0.0.1920.1056" timestamp="1581546520522" />
+    <state x="787" y="430" width="335" height="260" key="DBNavigator.ConnectionAuthenticationDialog" timestamp="1582106312329">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="787" y="430" width="335" height="260" key="DBNavigator.ConnectionAuthenticationDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582106312329" />
+    <state x="543" y="271" width="824" height="571" key="DBNavigator.DatasetFilterDialog" timestamp="1582107176834">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="543" y="271" width="824" height="571" key="DBNavigator.DatasetFilterDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582107176834" />
+    <state x="672" y="163" width="924" height="691" key="DBNavigator.ProjectSettingsDialog" timestamp="1582107161489">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="672" y="163" width="924" height="691" key="DBNavigator.ProjectSettingsDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582107161489" />
+    <state x="100" y="100" width="760" height="856" key="DiffContextDialog" timestamp="1581491604004">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="100" y="100" width="760" height="856" key="DiffContextDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581491604004" />
+    <state x="458" y="449" width="307" height="223" key="DockerComposeFileDialog" timestamp="1582108663158">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="458" y="449" width="307" height="223" key="DockerComposeFileDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582108663158" />
+    <state x="263" y="312" width="424" height="491" key="FileChooserDialogImpl" timestamp="1582111855741">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="263" y="286" width="503" height="486" key="FileChooserDialogImpl/0.0.1920.1056@0.0.1920.1056" timestamp="1581543609832" />
+    <state x="263" y="312" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582111855741" />
+    <state width="1874" height="154" key="GridCell.Tab.0.bottom" timestamp="1582127264694">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1581490921464" />
+    <state width="1874" height="154" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582127264694" />
+    <state width="1874" height="154" key="GridCell.Tab.0.center" timestamp="1582127264693">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.center/0.0.1920.1056@0.0.1920.1056" timestamp="1581490921463" />
+    <state width="1874" height="154" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582127264693" />
+    <state width="1874" height="154" key="GridCell.Tab.0.left" timestamp="1582127264692">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.left/0.0.1920.1056@0.0.1920.1056" timestamp="1581490921463" />
+    <state width="1874" height="154" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582127264692" />
+    <state width="1874" height="154" key="GridCell.Tab.0.right" timestamp="1582127264693">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="912" height="280" key="GridCell.Tab.0.right/0.0.1920.1056@0.0.1920.1056" timestamp="1581490921463" />
+    <state width="1874" height="154" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582127264693" />
+    <state x="665" y="247" width="582" height="566" key="MultipleFileMergeDialog" timestamp="1581543594454">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="665" y="247" width="582" height="566" key="MultipleFileMergeDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581543594454" />
+    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog" timestamp="1582127469556">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="756" y="478" width="397" height="158" key="NewPhpFileDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582127469556" />
+    <state x="740" y="235" width="430" height="643" key="RollbackChangesDialog" timestamp="1582131538183">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="740" y="235" width="430" height="643" key="RollbackChangesDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582131538183" />
+    <state x="435" y="181" width="1022" height="737" key="SettingsEditor" timestamp="1582107009616">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="435" y="154" width="1022" height="732" key="SettingsEditor/0.0.1920.1056@0.0.1920.1056" timestamp="1581543290494" />
+    <state x="435" y="181" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582107009616" />
+    <state x="555" y="254" width="802" height="553" key="Vcs.Push.Dialog.v2" timestamp="1581546523973">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="555" y="254" width="802" height="553" key="Vcs.Push.Dialog.v2/0.0.1920.1056@0.0.1920.1056" timestamp="1581546523973" />
+    <state x="381" y="392" width="369" height="273" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1581543527801">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="381" y="392" width="369" height="273" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1056@0.0.1920.1056" timestamp="1581543527801" />
+    <state x="63" y="186" width="826" height="686" key="com.intellij.database.dbimport.ImportDialog" timestamp="1581490901501">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="63" y="186" width="826" height="686" key="com.intellij.database.dbimport.ImportDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581490901501" />
+    <state x="331" y="186" width="289" height="686" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1581543435994">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="331" y="186" width="289" height="686" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1581543435994" />
+    <state x="728" y="475" width="456" height="162" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582105714581">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="728" y="449" width="456" height="162" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1056@0.0.1920.1056" timestamp="1581543570058" />
+    <state x="728" y="475" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582105714581" />
+    <state x="605" y="286" width="843" height="546" key="find.popup" timestamp="1582132334325">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="605" y="260" width="709" height="538" key="find.popup/0.0.1920.1056@0.0.1920.1056" timestamp="1581578128923" />
+    <state x="605" y="286" width="843" height="546" key="find.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582132334325" />
+    <state x="624" y="196" width="672" height="676" key="search.everywhere.popup" timestamp="1582132339314">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="624" y="196" width="672" height="676" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1582132339314" />
+  </component>
+</project>

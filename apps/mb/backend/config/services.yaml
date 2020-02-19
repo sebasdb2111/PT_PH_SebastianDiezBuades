@@ -1,0 +1,96 @@
+imports:
+  - { resource: ../../../../src/Mb/Shared/Infrastructure/Symfony/DependencyInjection/mb_services.yaml }
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Configure
+  _instanceof:
+    PruebaTecnicaPh\Shared\Domain\Bus\Event\DomainEventSubscriber:
+      tags: ['pruebatecnicaph.domain_event_subscriber']
+
+    PruebaTecnicaPh\Shared\Domain\Bus\Command\CommandHandler:
+      tags: ['pruebatecnicaph.command_handler']
+
+    PruebaTecnicaPh\Shared\Domain\Bus\Query\QueryHandler:
+      tags: ['pruebatecnicaph.query_handler']
+
+  PruebaTecnicaPh\Apps\Mb\Backend\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  PruebaTecnicaPh\Apps\Mb\Backend\Command\:
+    resource: '../src/Command'
+    tags: ['console.command']
+
+  # Wire
+  PruebaTecnicaPh\Shared\:
+    resource: '../../../../src/Shared'
+
+  PruebaTecnicaPh\Mb\:
+    resource: '../../../../src/Mb'
+
+  # -- TAGGING --
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus:
+    arguments: [!tagged pruebatecnicaph.domain_event_subscriber]
+    lazy: true
+
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\DomainEventMapping:
+    arguments: [!tagged pruebatecnicaph.domain_event_subscriber]
+
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\DomainEventSubscriberLocator:
+    arguments: [!tagged pruebatecnicaph.domain_event_subscriber]
+
+  PruebaTecnicaPh\Shared\Infrastructure\Doctrine\DatabaseConnections:
+    arguments: [!tagged pruebatecnicaph.database_connection]
+
+  PruebaTecnicaPh\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+  PruebaTecnicaPh\Shared\Infrastructure\Symfony\ApiExceptionListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.exception, method: onException }
+
+
+  # -- APP DEFINITIONS --
+  # Command/Query Handlers
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Command\InMemorySymfonyCommandBus:
+    arguments: [!tagged pruebatecnicaph.command_handler]
+
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus:
+    arguments: [!tagged pruebatecnicaph.query_handler]
+
+  # RabbitMQ
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection:
+    arguments:
+      - host: '%env(RABBITMQ_HOST)%'
+        port: '%env(RABBITMQ_PORT)%'
+        vhost: '%env(RABBITMQ_MB_VHOST)%'
+        login: '%env(RABBITMQ_LOGIN)%'
+        password: '%env(RABBITMQ_PASSWORD)%'
+        read_timeout: 2
+        write_timeout: 2
+        connect_timeout: 5
+
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus:
+    arguments: ['@PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection', '%env(RABBITMQ_EXCHANGE)%']
+
+  PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqDomainEventsConsumer:
+    arguments:
+      - '@PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection'
+      - '@PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\DomainEventJsonDeserializer'
+      - '%env(RABBITMQ_EXCHANGE)%'
+      - '%env(RABBITMQ_MAX_RETRIES)%'
+
+  PruebaTecnicaPh\Apps\Mb\Backend\Command\DomainEvents\RabbitMq\ConfigureRabbitMqCommand:
+    arguments:
+      - '@PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer'
+      - '%env(RABBITMQ_EXCHANGE)%'
+      - !tagged pruebatecnicaph.domain_event_subscriber
+
+
+  # -- IMPLEMENTATIONS SELECTOR --
+  PruebaTecnicaPh\Shared\Domain\Bus\Event\EventBus: '@PruebaTecnicaPh\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus'

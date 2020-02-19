@@ -1,0 +1,19 @@
+bonsais_get_riego:
+    path: /get-riego/{bonsaiType}
+    controller: PruebaTecnicaPh\Apps\Mb\Backend\Controller\Bonsais\BonsaisGetRiegoController
+    methods:  [GET]
+
+bonsais_get_abono:
+    path: /get-abono/{bonsaiType}
+    controller: PruebaTecnicaPh\Apps\Mb\Backend\Controller\Bonsais\BonsaisGetAbonoController
+    methods:  [GET]
+
+bonsais_get_transplante:
+    path: /get-transplante/{bonsaiType}
+    controller: PruebaTecnicaPh\Apps\Mb\Backend\Controller\Bonsais\BonsaisGetTransplanteController
+    methods:  [GET]
+
+bonsais_get_pulverizar:
+    path: /get-pulverizar/{bonsaiType}
+    controller: PruebaTecnicaPh\Apps\Mb\Backend\Controller\Bonsais\BonsaisGetPulverizarController
+    methods:  [GET]
